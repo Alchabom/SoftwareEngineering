@@ -11,8 +11,10 @@ public abstract class pettingZoo
 
 public void zooWelcome()    
 {
+    Boolean petting = true; 
     Scanner input = new Scanner(System.in);
-
+do
+{
     System.out.println("Welcome to the petting zoo!\nWould you like to see our animals? (Y/N)"); 
     String answer = input.nextLine(); 
 
@@ -27,12 +29,16 @@ public void zooWelcome()
     }
     else
     {
+        petting = false;
         System.out.println("Goodbye!");
-        System.exit(0);
+        break;
     }
 
     petSelection = input.nextLine();
     pet(petSelection);
+    System.out.println();
+} while(petting);
+
     input.close();
 }
             
